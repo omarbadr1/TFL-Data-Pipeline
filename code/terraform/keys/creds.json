@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "transport-for-london-project",
+  "private_key_id": "be786cea2d6e1b1c54659747fb56f4fff625d680",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCpoWrMsR6fvBVx\nWjVRGhbQKuc81wFL3LhFFLEhOcAoeE8ZD6jlN+uBL2Yx5hEmYOzV7vqTj55qWkSg\npxAkspisUT5uI69KSLAGPSodsy4nwLpBE7umr1lJCTYCs8V5p2FvtXiYPAKuHdSI\nUogk0KIf6YmQ/UuFhzQ3iZ9jR1s/tBfaq2HtQt7K9sF1oPwoRHeYJXu662Obt1Gi\niR5hezE0BRi1jfOrh5quhC6MUfeOxi5sxvltM8PEXqQQ0GK7hYyyPjYxTksIYukV\nP4WecxeIHDwshkaxUnpy4qkVtHEEC1c5TAO4D0wkWhfpyDQMJiFflNPgMcf2kzNn\nwfOiQjIjAgMBAAECggEAFzqWA/LLRUd9zjhyraj7b8U4RjIRKODQURFs0iZ05HXZ\nKw7ka4M1Wkrx3Spqtc03EXK42KUlpd23oSJPiR713j7/5Bg55FvA0xHkJw4G54Wy\nW8AGheRkPyamQUd55tdfdestWPd6zHokRQi8QQJa+TDDWFn/Ugk6QtKzQ2adncLj\nlbbSyFAhUX/ZRRMryfn/zrvFQfkQFDqsGZ0vPZzUKVLhc/i3oZwW8yvrGAfWSrbb\nK8c+qixf2J3pjyEhTXqJZk+wmmwWNOsok75qzl2dYuE5umbvbMzveFlU+YpNZfrr\nVA+jnwIQhw5gWjqOszSC+h8kxdnE4YSW/KIlKqec2QKBgQDvK+ivbv/xta+cdUAj\nBLk/mkmyJQYSDPKsvffqi7MmGwQIstGdw6SHpag91jbSXQK4E44MjGzJrNHA386Q\nzHqcxSXER0rxlG8T3X9NwzjNqB81ekzh+eDUJs+eMLd1CfB/S4zMmodfk/zoZYjS\nHZl3y2kn8MCcWLjZ/zY3RxyvGwKBgQC1kOWu/raT+xKbileqvQBkdLTzVu5uUSzH\nzLKcFiHnhbZ2CReKy+0Kz9dE0c5YmG+dlMkX98DURIqkqbEuWj7JDPD/OZ8ml5zm\n+kAjaPGHFx/hhi0whdtT9xMiFtQGFMRU8PT67+ZFN42nE8Zor1EyQPkkYie9X16B\ntU22mYJRmQKBgFcVD7XAnqQtWPGIp3+YmrKTxL1+SYWM/Vb0HC5kCyiWsZNROI1O\nzLsvD+Dj/DX/85t+UzwybPHJYN3vH1ENgp9OEQA0TQ9E0mTTQyTXLfmDe0mHbDLj\nPn9AWlvotQOCSPSwV2Wv5hZg1bbwMS7/4/8AKxuFxzul+jg1elIKLGF9AoGAHnBT\nQTosi7R80xynQ9V5ul2idGUvhckQE9LqYqaHOpQ9GZ6+lqNHcxeTBFOUH2A23hky\neVUsu6leAOr97EJu4i/MO02Cs+qZAFQV6pnOXBJxYtKmwsq+EV6Lk5x2ISrcG01m\nFKehWBtPISJ8kdJKb31bB1F5ThMt+drWU3V61okCgYEA3duTYoKN4iB0uE85l912\nP70frNsPpaGcXsWnxsHzxCmduLzRKTzN91uoQImmVNroXdYKFeJDpOX7e2xlretl\nmrP0oGp2KuuzpL0AKdR/WC6cMGgz0p+koGT25YNjp2i5+0PSB0ujocJZb+B0qR3I\nRqlptg0dJ1irkSKWJ24GjO4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "tfldata@transport-for-london-project.iam.gserviceaccount.com",
+  "client_id": "110228899561754934487",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tfldata%40transport-for-london-project.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
