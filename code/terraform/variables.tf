@@ -1,6 +1,6 @@
 variable "credentials" {
   description = "My Credentials"
-  default     = "./keys/my-creds.json"
+  default     = "./keys/creds.json"
 }
 
 
@@ -17,7 +17,7 @@ variable "project" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Data Set Name"
-  default     = "TFL BQ Dataset"
+  default     = "tfl_bq_dataset"
 }
 
 variable "gcs_bucket_name" {
