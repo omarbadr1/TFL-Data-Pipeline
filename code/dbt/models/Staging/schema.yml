@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: staging
+    database: transport-for-london-project
+    schema: tfl_bq_dataset
+    tables:
+      - name: Journeys_new
