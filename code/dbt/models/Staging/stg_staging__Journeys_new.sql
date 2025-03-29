@@ -10,7 +10,7 @@ renamed as (
 
     select
         traveldate,
-        dayofweek,w
+        dayofweek,
         {{check_if_weekend("dayofweek")}} as week_part,
         tubejourneycount,
         busjourneycount,
