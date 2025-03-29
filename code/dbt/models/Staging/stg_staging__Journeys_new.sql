@@ -10,8 +10,7 @@ renamed as (
 
     select
         traveldate,
-        dayofweek,
-        {{ dbt_date.month_name("traveldate") }} as month_short_name,
+        dayofweek,w
         {{check_if_weekend("dayofweek")}} as week_part,
         tubejourneycount,
         busjourneycount,
