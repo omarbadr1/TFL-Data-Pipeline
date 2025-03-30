@@ -33,6 +33,6 @@ The dataset used in this project comes from [TfL's online journeys dataset](http
 
 ## Data Visualisation
 
-![image](https://github.com/user-attachments/assets/468d6091-1371-482e-8b7a-ae7132dbd290)
+![image](https://github.com/user-attachments/assets/da2cb8be-9598-4c52-8f94-1e8990aae5fc)
 
 
