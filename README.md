@@ -26,3 +26,9 @@ The dataset used in this project comes from TFL's online journeys data set (http
 - **BigQuery** – Data warehouse  
 - **dbt** – Data transformation  
 - **Looker Studio** – Data visualization  
+
+## Data Pipeline
+
+![TFL Diagram drawio (1)](https://github.com/user-attachments/assets/0d53d43e-7544-4785-9ddf-b06b050fc74e)
+
+
