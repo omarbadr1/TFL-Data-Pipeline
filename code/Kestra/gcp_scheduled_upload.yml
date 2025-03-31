@@ -2,50 +2,50 @@ id: gc_scheduled
 namespace: tfl_data_pipeline
 
 inputs:
-  - id: inputyear
+  - id: input_year
     type: SELECT
-    displayName: Select year type
-    values: ['2019','2020','2021','2022']
-    defaults: '2019'
-
+    displayName: Select taxi type
+    values: ['2019', '2020', '2021', '2022']
+    defaults: '2022'
 
 variables:
-  file: "Journeys_{{inputs.inputyear}}.csv"
+  file: "Journeys_{{inputs.input_year}}.csv"
   gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
-  table: "{{kv('GCP_DATASET')}}.Journeys_{{render(inputs.inputyear)}}"
+  table: "{{kv('GCP_DATASET')}}.Journeys_{{inputs.input_year}}"
 
 tasks:
   - id: extract
     type: io.kestra.plugin.scripts.shell.Commands
     outputFiles:
-      - "Journeys_{{render(inputs.inputyear)}}.csv"
+      - "Downloaded_Data.CSV"
     taskRunner:
       type: io.kestra.plugin.core.runner.Process
     commands:
-      - wget -q -O "render{{vars.file}}" "https://crowding.data.tfl.gov.uk/Network%20Demand/{{render(vars.file)}}"
+      - wget -q -O "Downloaded_Data.CSV" "https://crowding.data.tfl.gov.uk/Network%20Demand/{{render(vars.file)}}"
 
   - id: upload_to_gcs
     type: io.kestra.plugin.gcp.gcs.Upload
-    from: "{{ outputs.extract.outputFiles['Journeys_inputs.inputyear)}}']}}"
+    from: "{{ outputs.extract.outputFiles['Downloaded_Data.CSV']}}"
     to: "{{render(vars.gcs_file)}}"
 
   - id: bq_journeys
     type: io.kestra.plugin.gcp.bigquery.Query
     sql: |
-      CREATE TABLE IF NOT EXISTS `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.Journeys`
+      CREATE TABLE IF NOT EXISTS `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.Journeys_new`
       (
-          TravelDate STRING OPTIONS (description = 'Date of travel, formatted as yyyyMMdd'),
+          TravelDate STRING OPTIONS (description = 'Date of travel, formatted as yyMMdd'),
           DayOFWeek STRING OPTIONS (description = 'Day of the week (e.g., Monday, Tuesday, etc.)'),
           TubeJourneyCount INTEGER OPTIONS (description = 'The count of tube journeys for the day'),
           BusJourneyCount INTEGER OPTIONS (description = 'The count of bus journeys for the day')
       )
-  
+
+
   - id: bq_journeys_ext
     type: io.kestra.plugin.gcp.bigquery.Query
     sql: |
       CREATE OR REPLACE EXTERNAL TABLE `{{kv('GCP_PROJECT_ID')}}.{{render(vars.table)}}_ext`
       (
-          TravelDate STRING OPTIONS (description = 'Date of travel, formatted as yyyyMMdd'),
+          TravelDate STRING OPTIONS (description = 'Date of travel, formatted as yyMMdd'),
           DayOFWeek STRING OPTIONS (description = 'Day of the week (e.g., Monday, Tuesday, etc.)'),
           TubeJourneyCount INTEGER OPTIONS (description = 'The count of tube journeys for the day'),
           BusJourneyCount INTEGER OPTIONS (description = 'The count of bus journeys for the day')
@@ -70,7 +70,6 @@ tasks:
           "{{render(vars.file)}}" AS filename,
           *
       FROM `{{kv('GCP_PROJECT_ID')}}.{{render(vars.table)}}_ext`;
-
 
   - id: bq_journeys_merge
     type: io.kestra.plugin.gcp.bigquery.Query
@@ -98,6 +97,3 @@ triggers:
   - id: tfl_schedule
     type: io.kestra.plugin.core.trigger.Schedule
     cron: "0 9 1 1 *"
-   
-
-
