@@ -51,10 +51,10 @@ terraform apply
 cd code/kestra
 ```
 
-2. Start Kestra:
+2. Run Kestra through docker
 
 ```
-docker compose up
+docker run --pull=always -it -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp kestra/kestra:latest server local 
 ```
 
 3. In the Kestra UI, create a new flow to:
@@ -63,18 +63,16 @@ docker compose up
 
 # Transform Data with dbt
 
-Update code/dbt/models/staging/schema.yml:
+1. Link dbt with Github Repo
+2. Link dbt with Bigquery
+3. Execute TFL Run
 
 # Visualize with Looker Studio
 
 1. Connect BigQuery as a data source.
 
-2. Create reports for:
-
-  - Total rides (Record Count).
-  
-  - Weekly transport usage (Grouped by weekday).
-
+2. Create reports yearly/weekly usage
+3. 
 # Save and share the dashboard.
 
 1. Teardown Resources
