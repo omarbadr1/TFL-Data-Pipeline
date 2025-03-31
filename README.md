@@ -2,14 +2,12 @@
 
 # Transport for London (TFL) Data Pipeline
 
-This is my final project submission for the Data Engineering Zoomcamp 2025.  
+This is my final project submission for the [Data Engineering Zoomcamp 2025]([https://crowding.data.tfl.gov.uk/](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main).  
 
 ## Problem Overview
 Millions of people rely on buses and the tube for their daily commutes across London. This project focuses on building a data pipeline to process bus and tube usage data from 2019 to 2022, providing insights into commuting patterns by answering key analytical questions:
 - Which days of the week have the highest ridership?  
-- Do commuters prefer buses or the tube?
-- How frequently are buses and the tube used on weekends?
-
+- How has bus and tube Usage changed over the years?
 ## Data Set  
 The dataset used in this project comes from [TfL's online journeys dataset](https://crowding.data.tfl.gov.uk/) and includes the following fields: 
 
