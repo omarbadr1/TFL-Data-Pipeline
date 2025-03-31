@@ -11,9 +11,11 @@ renamed as (
     select
         traveldate,
         dayofweek,
+        EXTRACT(MONTH FROM PARSE_DATE('%Y%m%d', TravelDate)) AS month,
+        EXTRACT(YEAR FROM PARSE_DATE('%Y%m%d', TravelDate)) AS year,
         {{check_if_weekend("dayofweek")}} as week_part,
-        tubejourneycount,
-        busjourneycount,
+        tubejourneycount as tube_journey_count,
+        busjourneycount as bus_journey_count,
         unique_row_id,
         filename
 
